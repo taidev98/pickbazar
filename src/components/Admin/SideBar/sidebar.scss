@@ -1,0 +1,39 @@
+@import "../../../assets/styles/_mixins";
+@import "../../../assets/styles/_variables";
+.sidebar {
+  width: 27rem;
+  height: calc(100vh - 11rem);
+  background-color: $white;
+  position: fixed;
+  bottom: 0;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0;
+    margin-left: 2rem;
+    &__item {
+      &:last-of-type {
+        position: absolute;
+        bottom: 2rem;
+      }
+      &--active {
+        background-color: $bg-block;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+    &__link {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: $secondary-color;
+      padding: 2rem 5.5rem 2rem 3rem;
+      i {
+        margin-right: 1.5rem;
+        width: 2rem;
+      }
+    }
+  }
+}

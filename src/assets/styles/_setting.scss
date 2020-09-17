@@ -1,0 +1,61 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $primary-font;
+  font-weight: 400;
+  color: $secondary-color;
+  background-color: $bg-block;
+  font-size: 1.4rem;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  display: block;
+  text-decoration: none;
+}
+.wrapper {
+  max-width: $wrapper;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: calc(100% - 27rem);
+  height: calc(100vh - 11rem);
+  padding: 5rem;
+  background-color: $bg-block;
+  overflow: auto;
+}
+.main {
+  display: flex;
+  height: calc(100vh - 11.6rem);
+  margin-top: 11.6rem;
+}
+.btn {
+  vertical-align: middle;
+  border: 0;
+  outline: none;
+  padding: 1.4rem 2.5rem;
+  text-align: center;
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  &--primary {
+    background-color: $primary-color;
+  }
+  &--rounded {
+    border-radius: 0.4rem;
+  }
+}

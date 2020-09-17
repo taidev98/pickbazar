@@ -1,0 +1,84 @@
+@mixin size($width, $hight: null) {
+  width: $width;
+  height: $hight;
+}
+@mixin flexbox(
+  $flex: flex,
+  $direction: null,
+  $align: null,
+  $justify: null,
+  $wrap: null,
+  $order: null
+) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  order: $order;
+}
+@mixin flexCenter() {
+  display: flex;
+  justify-content: centers;
+  align-items: center;
+}
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+@mixin centerAbsolute($direction: "both") {
+  position: absolute;
+  @if $direction == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @if $direction == "left" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $direction == "top" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@mixin box-shadow($x, $y, $blur, $spread, $color: black, $inset: false) {
+  @if $inset {
+    box-shadow: inset $x $y $blur $spread $color;
+  } @else {
+    box-shadow: $x $y $blur $spread $color;
+  }
+}
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+@mixin minWidth($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin maxWidth($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}

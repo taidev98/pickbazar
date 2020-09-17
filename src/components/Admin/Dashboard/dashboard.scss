@@ -1,0 +1,26 @@
+@import "../../../assets/styles/_mixins";
+@import "../../../assets/styles/_variables";
+.dashboard {
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  position: relative;
+  background-color: $white;
+  height: 30rem;
+  width: calc(33.3% - 2rem);
+  &__heading,
+  &__footer {
+    word-break: break-all;
+    padding: 3rem;
+  }
+  &__footer {
+    position: absolute;
+    bottom: 0;
+  }
+  &__body {
+  }
+  &__title {
+    font-size: 1.6rem;
+  }
+}
